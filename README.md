@@ -1,2 +1,2 @@
-# google-ctf-practice-problems
-Google CTF 2023
+# google-ctf-reverse-turtle
+Google CTF 2023 Practice Problem - Capture The Flags
