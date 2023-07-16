@@ -1,7 +1,5 @@
 # Google CTF 2023 Practice Problem - Reverse Turtle
 
-*Note: this writeup was created by a challenge tester during our internal test run*
-
 In the task we get a Python script using turtles (like the LOGO language). It first
 draws two PNG pictures we also have given.
 
@@ -19,13 +17,13 @@ After reading the code in detail, we can figure out what the turtles are used as
 - rTurt reads and writes registers, the last 3 of which are condition flags (`==, <, >`)
 - cTurt reads code, from c.png
 
-We implemented a disassembler for the VM in the `disas.py` file. The code only
+We implemented a disassembler for the VM in the `turtle.py` file. The code only
 contains several CALL instructions, and all of them point to the very top of the
 image. So that means every third column (as opcodes are three pixel large)
 is a separate function.
 
-Here's the raw output from `disas.py`:
-```
+Here's the raw output from `turtle.py`:
+```python
 00:                DROP -83 VALUES                   MOV reg_2, 4                 DROP -4 VALUES 
 01:              MOV reg_2, MEM[0]           MOV STACK[-2], reg_2               MOV reg_4, reg_1 
 02:                  CMP reg_2, 67               MOV STACK[-3], 0             MOV STACK[], reg_0 
@@ -117,7 +115,7 @@ Here's the raw output from `disas.py`:
 Each column is a separate function, and the first one is the main entry.
 We rewrote the pseudo-assembly into a more readable forms:
 
-```
+```python
 left function:
 0-16: check if CTF{...}
 for var1 in range(0, 80):
