@@ -1,4 +1,4 @@
-# Google CTF 2023 Practice Problem - Capture The Flags - Reverse Turtle 
+# Google CTF 2023 Practice Problem - Reverse Turtle
 
 *Note: this writeup was created by a challenge tester during our internal test run*
 
